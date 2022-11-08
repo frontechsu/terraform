@@ -1,7 +1,3 @@
-provider "aws" {
-  region = "us-west-1"
-}
-
 resource "aws_instance" "AWSEC2instance" {
   count = "${var.instance_count}"  
   ami             = "${var.ami}"
