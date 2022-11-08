@@ -1,0 +1,15 @@
+provider "aws"{
+    region = "us-west-1"
+    access_key = "AKIA342BLB5BSE4DNPK7"
+    secreate_key = "MXt3L6n1zLc+gaBEFLiP1iMqIakKqgCcmqc5z+Wa"
+}
+
+resource "aws_instance" "AWSEC2instance"{
+    ami = "ami-02ea247e531eb3ce6"
+    instance_type = "t2.micro"
+    security_groups = ["launch-wizard-1"]
+    key_name = "ubuntu"
+    tag = {
+        Name = "ubuntu server by terraform"
+    }
+}
